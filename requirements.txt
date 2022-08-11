@@ -74,6 +74,7 @@ tinycss2==1.1.1
 tornado==6.1
 tqdm==4.64.0
 traitlets==5.3.0
+turtle==0.0.1
 tzdata==2022.1
 urllib3==1.26.11
 wcwidth==0.2.5
