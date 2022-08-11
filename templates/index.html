@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-size=500px;
+    }
+    
+    .column {
+      float: left;
+      width: 20%;
+      padding: 5px;
+      overflow-x: hidden;
+    }
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  
+    .title{
+      font-size: 35px;
+    }
+    @media only screen and (max-width: 600px) {
+      .title{
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container my-5">
+    <h2>Movie Recommeder System</h2>
+    <p>Enter here a movie name</p>
+    <form action="/" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <input list='brow' type="text" class="form-control" id="movie_name" name="movie_name"
+          aria-describedby="textHelp" placeholder="Enter or select a Movie name" important>
+        <datalist id="brow">
+          {% for i in name %}
+          <option>{{i}}</option>
+          {% endfor %}
+        </datalist>
+
+      </div>
+      <button type="submit" class="btn btn-secondary">Recommed</button>
+    </form>
+    <br>
+    <div class="container">
+      {% for i in MoviePoster %}
+      <div class="column">
+        <img src={{i}} alt="Image not found" style="width:100%">
+      </div>
+      {% endfor %}
+      {% for j in MovieName %}
+      <div class="column">
+        <p>{{j}}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+
+
+</body>
+
+</html> {% endblock body %}
