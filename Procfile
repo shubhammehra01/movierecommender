@@ -1,1 +1,1 @@
-web: gunicorn CCMS.wsgi --log-file --app moviesrecomsystem
+web: gunicorn CCMS.wsgi --log-file -
