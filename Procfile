@@ -1,1 +1,1 @@
-web: gunicorn CCMS.wsgi --log-file -
+worker: gunicorn CCMS.wsgi --log-file -
