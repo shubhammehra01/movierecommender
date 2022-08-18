@@ -1,5 +1,5 @@
 argon2-cffi-bindings==21.2.0
-python==3.9.13
+
 asgiref==3.5.0
 asttokens==2.0.5
 attrs==21.4.0
